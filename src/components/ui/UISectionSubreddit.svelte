@@ -1,6 +1,7 @@
 <script>
     import Trigger from "../../utility/trigger.js"
     import ActivityButton from "../ActivityButton.svelte"
+    import UIActivityWritePost from "./UIActivityWritePost.svelte"
 
     export let game
 
@@ -16,10 +17,10 @@
 
         <div class="stats">
             <div class="stat">Users : <span class="value">{subreddit.users}</span></div>
-            <div class="stat">Avg. post quality : <span class="value">{subreddit.postQuality}</span></div>
+            <div class="stat">Avg. post quality : <span class="value">{subreddit.postQuality.toFixed(2)}</span></div>
         </div>
 
-        <ActivityButton activity="write-posts" {game}> Write posts </ActivityButton>
+        <UIActivityWritePost {game}/>
 
         <div class="stats">
             <div class="stat">Awesome posts : <span class="value">{subreddit.posts[4]}</span></div>
