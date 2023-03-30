@@ -15,8 +15,9 @@
 
     function generateTitle() {
         const base = WordList[Math.floor(Math.random() * WordList.length)]
-        const postfix = POSTFIXES[Math.floor(POSTFIXES.length * (Math.random() ** 2))]
-        return `${base.slice(0,1).toUpperCase()}${base.slice(1)} ${postfix}`
+        const postfixes = [WordList[Math.floor(Math.random() * WordList.length)], ...POSTFIXES]
+        const postfix = postfixes[Math.floor(postfixes.length * (Math.random() ** 2))]
+        return `${base} ${postfix}`.replace(/\b(\S)/g, s => s.toUpperCase())
     }
 
     function newGame() {

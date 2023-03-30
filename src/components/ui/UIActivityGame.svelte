@@ -10,7 +10,7 @@
 </script>
 
     <div class="game">
-        <ActivityButton activity="play-game" {game}> Play game </ActivityButton>
+        <ActivityButton activity="play-game" {game}> Play games </ActivityButton>
         {#if activity}
             <div class="stats">
                 <div>Playing: {activity.title}</div>

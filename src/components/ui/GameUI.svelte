@@ -30,10 +30,11 @@
 <style>
     pre.debug {
         position: absolute;
-        right : 0;
-        top : 0;
+        left : 0;
+        top : 20px;
         opacity: 0.5;
         pointer-events: none;
+        font-size: 8px;
     }
 
     div.content {
