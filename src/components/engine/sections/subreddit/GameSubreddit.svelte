@@ -19,8 +19,8 @@
     function createSubreddit() {
         subreddit = Object.create(null)
         subreddit.posts = [0,0,0,0,0]
-        subreddit.rules = 0
-        subreddit.moderators = 0
+        subreddit.rules = 0 // todo: decrease post rate, increase quality
+        subreddit.moderators = 0 // todo: auto moderate, can reduce users
         subreddit.users = 0
         updatePosts()
     }
@@ -31,6 +31,7 @@
     }
 
     function processTick() {
+        //todo: take post and user count into account
         if (Math.random() * 100 < subreddit.postQuality ** 3)
             subreddit.users += 1
 
