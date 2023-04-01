@@ -12,7 +12,7 @@
 
     const triggers = []
     onMount(() => {
-        triggers.push(Trigger.on("create-discord", createDiscord))
+        triggers.push(Trigger.on("discord-create", createDiscord))
     })
 
     onDestroy(() => {

@@ -2,27 +2,24 @@
     import Trigger from "../../utility/trigger.js"
     import ActivityButton from "../ActivityButton.svelte"
 
-    const ACTIVITY_NAME = "write-posts"
+    const ACTIVITY_NAME = "moderate-subreddit"
 
     export let game
 
-    $: activity = game?.state?.activities?.writePosts
-    $: stage = activity?.completed ? `Improving post` : `Writing post`
+    $: activity = game?.state?.activities?.moderateSubreddit
+    $: stage = `Moderating`
     $: progress = `${activity?.progress?.toFixed(2)}/${activity?.time?.toFixed(2)}`
-    $: quality = activity?.completed ? ["Annoying", "Boring", "Interesting", "Cool", "Awesome"][activity?.stage] : `Unknown`
+
 </script>
 
 <div class="game">
-    <ActivityButton activity={ACTIVITY_NAME} {game}> Write posts </ActivityButton>
+    <ActivityButton activity={ACTIVITY_NAME} {game}> Moderate subreddit </ActivityButton>
     {#if activity && game.state.activity === ACTIVITY_NAME}
+        <div class="hint">Moderating is depressing</div>
         <div class="stats">
             <div>Stage: {stage}</div>
             <div>Progress: {progress}</div>
-            <div>Current quality: {quality}</div>
         </div>
-        <button disabled={!activity.completed} on:click={() => Trigger("activity-post-publish")} >
-            Publish current post as is
-        </button>
     {/if}
 </div>
 

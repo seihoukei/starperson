@@ -28,7 +28,8 @@
         }
     }
 
-    function advance(time) {
+    function advance(time, level) {
+        time *= (1 + level) ** 1.2
         while (activity.progress + time > activity.time) {
             time -= (activity.time - activity.progress)
             completeStage()
@@ -47,7 +48,7 @@
 
     const triggers = []
     onMount(() => {
-        triggers.push(Trigger.on("tick", advance))
+        triggers.push(Trigger.on("activity-advance", advance))
         triggers.push(Trigger.on("activity-post-publish", publish))
     })
 

@@ -16,7 +16,7 @@
 
     function completeStage() {
         activity.progress = 0
-        Trigger("subreddit-moderate", {})
+        Trigger("subreddit-moderate", {person : true})
     }
 
     function advance(time) {
@@ -29,7 +29,7 @@
 
     const triggers = []
     onMount(() => {
-        triggers.push(Trigger.on("tick", advance))
+        triggers.push(Trigger.on("activity-advance", advance))
     })
 
     onDestroy(() => {

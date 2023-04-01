@@ -40,3 +40,9 @@ div.flavor {
   font-size: 0.7rem;
   font-style: italic;
 }
+
+div.hint {
+  font-size: 0.7rem;
+  font-style: italic;
+  margin: -0.7rem 0;
+}

@@ -6,7 +6,7 @@
 </script>
 
 <div class="container">
-    <button on:click={() => Trigger("reset-game")}>Reset game</button>
+    <button on:click={() => confirm("Reset game?") && Trigger("reset-game")}>Reset game</button>
 </div>
 
 <style>

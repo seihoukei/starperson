@@ -65,7 +65,7 @@
 
     const triggers = []
     onMount(() => {
-        triggers.push(Trigger.on("tick", advance))
+        triggers.push(Trigger.on("activity-advance", advance))
         triggers.push(Trigger.on("activity-game-drop", dropGame))
     })
 

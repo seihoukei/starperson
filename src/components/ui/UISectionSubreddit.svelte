@@ -2,6 +2,7 @@
     import Trigger from "../../utility/trigger.js"
     import ActivityButton from "../ActivityButton.svelte"
     import UIActivityWritePost from "./UIActivityWritePost.svelte"
+    import UIActivityModerate from "./UIActivityModerate.svelte"
 
     export let game
 
@@ -9,14 +10,20 @@
 
 </script>
 
-<div class="page">
-    {#if subreddit}
+{#if subreddit}
+    <div class="page">
         <div class="flavor">
             The people are roaring. The posts are hot.
         </div>
 
         <div class="stats">
             <div class="stat">Users : <span class="value">{subreddit.users}</span></div>
+            <div class="stat">
+                Moderators : <span class="value">{subreddit.moderators}</span>
+                {#if game?.can?.hireModerators}
+                    <button on:click={() => Trigger("subreddit-hire-moderator")}>Hire moderator (-10 users)</button>
+                {/if}
+            </div>
             <div class="stat">Avg. post quality : <span class="value">{subreddit.postQuality.toFixed(2)}</span></div>
         </div>
 
@@ -30,13 +37,10 @@
             <div class="stat">Annoying posts : <span class="value">{subreddit.posts[0]}</span></div>
         </div>
 
-        <ActivityButton activity="moderate-subreddit" {game}> Moderate subreddit </ActivityButton>
+        <UIActivityModerate {game}/>
 
-    {:else if game?.can?.createSubreddit}
-        <button on:click={() => Trigger("subreddit-create")}>Create subreddit</button>
-    {/if}
-
-</div>
+    </div>
+{/if}
 
 <style>
 
