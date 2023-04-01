@@ -43,7 +43,8 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        min-height: 100vh;
         column-gap: 1em;
+        row-gap: 1em;
+        overflow: auto;
     }
 </style>

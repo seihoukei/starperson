@@ -12,7 +12,7 @@
 <div class="page">
     {#if subreddit}
         <div class="flavor">
-            The chat is dead. The room is cool.
+            The people are roaring. The posts are hot.
         </div>
 
         <div class="stats">
