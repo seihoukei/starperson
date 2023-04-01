@@ -50,7 +50,8 @@
         }
     }
 
-    function advance(time) {
+    function advance(time, level) {
+        time *= 1 + level / 5
         while (activity.progress + time > activity.time) {
             time -= (activity.time - activity.progress)
             completeStage()

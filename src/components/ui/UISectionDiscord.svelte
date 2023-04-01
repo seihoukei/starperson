@@ -13,7 +13,7 @@
             A green shimmer erupts then disappears, and you hit the "Create server" button.
         </div>
 
-        I'm sorry, that's it. Thanks for playing.
+        <a href="https://discord.gg/cQ9pgrDVnJ">There.</a>
 
     </div>
 {/if}

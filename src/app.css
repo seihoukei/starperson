@@ -27,8 +27,8 @@ div.page {
 
   display: flex;
   flex-direction: column;
-  align-items: start;
-  row-gap: 0.5em;
+  align-items: stretch;
+  row-gap: 0.2em;
 
   width: 16em;
   height: 24em;
@@ -45,4 +45,20 @@ div.hint {
   font-size: 0.7rem;
   font-style: italic;
   margin: -0.7rem 0;
+}
+
+div.stats {
+  display: flex;
+  flex-direction: column;
+
+}
+
+div.activity {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  padding: 0.5em 0.5em;
+  width: 16em;
+  margin : 0.5em -0.5em;
+  background-color: #111111;
 }
